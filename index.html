@@ -69,7 +69,33 @@
   		<h3><img src="img/spanduk.png" width="80%"></h3>	
   		<h3></h3>
   	</section>
+<div class="container">
+  <h3>CHAT KE ADMIN</h3>
+    <button id="kirimPesan">Kirim Pesan</button>
+</div>
 
+<script>
+    document.getElementById('kirimPesan').addEventListener('click', function() {
+        var nomorTujuan = "+6283134702094"; // Ganti dengan nomor WhatsApp yang valid
+        var pesan = "Terima kasih telah menghubungi JualLaptop.!!"; // Pesan yang ingin dikirim
+        var url = "https://wa.me/" + nomorTujuan + "?text=" + encodeURIComponent(pesan);
+        
+        // Membuka URL WhatsApp
+        window.open(url, '_blank');
+    });
+</script>
+</body>
+</html>
+
+    <!-- spanduk -->
+  	<section class="spanduk">
+  		<h3>BANNER KAMPUNG LAPTOP</h3>
+  		<h3><img src="img/spanduk.png" width="80%"></h3>	
+  		<h3></h3>
+  	</section>
+
+
+	
   	<!-- about -->
   	<section class="about">
   		<div class="container">
