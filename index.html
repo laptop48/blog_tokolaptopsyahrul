@@ -95,15 +95,27 @@
 
 
 <div class="container">
-  <h3>CHAT KE ADMIN</h3>
+  	<h3>CHAT ADMIN</h3>
     <button id="klikPesan">Klik Pesan</button>
+    <button id="klikSaluranwhatsap">Klik Saluran Kp Laptop</button>
 </div>
 
 <script>
-    document.getElementById('klikPesan').addEventListener('click', function() {
+    	document.getElementById('klikPesan').addEventListener('click', function() {
         var nomorTujuan = "+6283134702094"; // Ganti dengan nomor WhatsApp yang valid
         var pesan = "Terima kasih telah menghubungi JualLaptop.!!"; // Pesan yang ingin dikirim
         var url = "https://wa.me/" + nomorTujuan + "?text=" + encodeURIComponent(pesan);
+        
+        // Membuka URL WhatsApp
+        window.open(url, '_blank');
+    });
+</script>
+</body>
+</html>
+	
+<script>
+    	document.getElementById('klikSaluranwhatsap').addEventListener('click', function() {
+        var url = "https://whatsapp.com/channel/0029VbAYrCz5K3zbzisaj11m"; // Ganti dengan URL saluran WhatsApp Anda
         
         // Membuka URL WhatsApp
         window.open(url, '_blank');
