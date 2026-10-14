@@ -1,184 +1,263 @@
-*{
-	padding: 0;
-	margin: 0;
-	font-family: sans-serif;
+/* =====================================================
+   TOKO LAPTOP SYAHRUL — tema modern dan responsif
+   Warna: navy, biru elektrik, putih, abu-abu lembut
+   ===================================================== */
+:root {
+  --navy: #101b36;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --cyan: #38bdf8;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --surface: #ffffff;
+  --soft: #f1f5f9;
+  --line: #e2e8f0;
+  --shadow: 0 12px 32px rgba(15, 23, 42, .09);
+  --radius: 16px;
 }
-a{
-	color: inherit;
-	text-decoration: none;
-}
-.medsos{
-	padding: 5px 0;
-	background-color:   #1f77;
-}
-.medsos ul li{
-	display: inline-block;
-	color: #fff;
-	margin-right: ;
-}
-.container{
-	width: 80%;
-	margin: 0 auto;
-}
-.container:after {
-	content: '';
-	display: block;
-	clear: both;
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: #f8fafc;
+  line-height: 1.65;
+  overflow-wrap: break-word;
 }
-header h1{
-	float: left;
-	padding: 15px 0;
-	color:   #148f77;
-}
-header ul{
-	float: right;
-}
-header ul li{
-	display: inline-block;
-}
-header ul li a{
-	padding: 25px 20px;
-	display: inline-block;
-}
-header ul li a:hover {
-    background-color:   #148f77;
-    color: #fff;
-}
-.active{
-	background-color:   #148f77;
-    color: #fff;
-}
-.banner{
-	height: 60vh;
-	background-image: url('../img/banner.jpg');
-	background-size: cover;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; transition: color .2s, background .2s, transform .2s; }
+.container { width: min(1180px, 92%); margin-inline: auto; }
 
+/* Sosial media */
+.medsos {
+  padding: 9px 0;
+  color: #eaf2ff;
+  background: var(--navy);
 }
-.banner:after {
-	content:'';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(20, 143, 119, .6);
+.medsos .container, .medsos > div { width: min(1180px, 92%); margin-inline: auto; }
+.medsos ul, .logo ul { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px 22px; list-style: none; padding: 0; margin: 0; }
+.medsos h4, .logo h3 { margin: 0; font-size: .9rem; font-weight: 500; }
+.medsos a, .logo a { color: #eaf2ff; }
+.medsos a:hover, .logo a:hover { color: var(--cyan); }
+
+/* Header dan navigasi */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 5px 20px rgba(15,23,42,.06);
+  backdrop-filter: blur(12px);
+}
+header .container { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+header h1 { margin: 0; padding: 15px 0; color: var(--navy); font-size: clamp(1.05rem, 2vw, 1.55rem); line-height: 1.25; }
+header h1 a { color: var(--navy); }
+header ul { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 4px; }
+header ul li { display: block; }
+header ul li a {
+  display: block;
+  padding: 12px 11px;
+  border-radius: 9px;
+  color: #334155;
+  font-size: .78rem;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+}
+header ul li a:hover, header ul li.active a, header ul li a:focus-visible { color: #fff; background: var(--blue); }
+.active { color: #fff; background: var(--blue); }
+
+/* Banner dan judul halaman */
+.banner {
+  min-height: clamp(300px, 52vw, 560px);
+  padding: 50px 20px;
+  background-image: linear-gradient(120deg, rgba(16,27,54,.88), rgba(37,99,235,.55)), url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .banner h2 {
-	color: #fff;
-	z-index: 1;
-	padding: 20px 25px;
-	border:3px solid #fff;
-}	
-section {
-	padding:50px 0;
-}
-section H3 {
-	text-align: center;
-	padding: 20px 0;
-	color:  #148f77;
-	margin-bottom: 25px;
-}
-.about p {
-	color: #666;
-	word-spacing: 2px;
-	line-height: 25px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-.about,
-.service {
-	padding-bottom: 100px;
-}
-.service {
-	background-color: #f9f9f9;
-}
-.box {
-	color: #148f77;
-}
-.box:after {
-	content:'';
-	display: block;
-	clear: both;
-}
-.box .col-4 {
-	width:25%;
-	padding:20px;
-	box-sizing: border-box;
-	text-align: center;
-	float: left;
-}
-.icon {
-	width: 70px;
-	height: 70px;
-	border:1px solid;
-	border-radius:50%;
-	text-align: center;
-	line-height: 70px;
-	font-size: 30px;
-	margin:0 auto;
-}
-.box .col-4 h4 {
-	margin:20px 0;
-
-}
-footer {
-	padding:30px 0;
-	background-color: #333;
-	color: #fff;
-	text-align: center;
-}
-.bg-loader {
-	background-color: #eee;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9999;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.bg-loader .loader {
-	width:100px;
-	height:100px;
-	border:3px solid #fff;
-	border-radius: 50%;
-	border-top-color: #148f77;
-	border-right-color: #148f77;
-	border-bottom-color: #148f77;
-	animation: puterin .8s linear infinite;
+  max-width: 900px;
+  margin: 0;
+  padding: clamp(18px, 3vw, 32px);
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.2;
+  z-index: 1;
+  text-shadow: 0 2px 15px rgba(0,0,0,.25);
 }
 .label {
-	background-color: #148f77;
-	color: #fff;
+  padding: clamp(30px, 5vw, 58px) 0;
+  color: #fff;
+  background: linear-gradient(120deg, var(--navy), var(--blue));
 }
-@Keyframes puterin {
-	100% {
-		transform: rotate(360deg);
-	}
-}	
-@media screen and (max.width: 768px){
-	.container {
-		width:90px;
-	}
-	header h1 {
-		text-align: center;
-		float: none;
-	}
-	header ul {
-		text-align: center;
-		float: none;
-	}
-	.box .col-4 {
-		width:100%;
-		float: none;\
-		margin-bottom: 20px;
-	}
+.label h1, .label h2 { margin: 0; text-align: center; font-size: clamp(1.35rem, 3vw, 2.35rem); line-height: 1.3; }
+section { padding: clamp(32px, 5vw, 64px) 0; }
+section h3 { color: var(--navy); text-align: center; line-height: 1.4; margin: 0 0 18px; padding: 8px 0; font-size: clamp(1.05rem, 2vw, 1.35rem); }
+.about p { max-width: 900px; margin: 10px auto 22px; color: var(--muted); line-height: 1.9; text-align: left; }
+.about, .service { padding-bottom: clamp(38px, 6vw, 80px); }
+.service { background: var(--soft); }
+
+/* Layanan dan kartu */
+.box { display: flex; align-items: stretch; justify-content: center; flex-wrap: wrap; gap: 18px; color: var(--blue); }
+.box .col-4 {
+  flex: 1 1 210px;
+  max-width: 280px;
+  padding: 26px 20px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+}
+.box .col-4:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15,23,42,.13); }
+.icon { width: 66px; height: 66px; border: 1px solid #bfdbfe; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 12px; font-size: 27px; color: var(--blue); background: #eff6ff; }
+.box .col-4 h4 { margin: 12px 0 0; color: var(--navy); }
+
+/* Foto dokumentasi, aksesoris dan testimoni */
+.dokumentasi .container, .aksesoris .container, .foto .container, .about .container { min-width: 0; }
+.dokumentasi .container > h3:has(img),
+.aksesoris .container > h3:has(img),
+.foto .container > h3:has(img) {
+  display: inline-flex;
+  vertical-align: top;
+  width: calc(33.333% - 18px);
+  margin: 8px 7px 22px;
+  padding: 14px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+.dokumentasi .container > h3:has(img) img,
+.aksesoris .container > h3:has(img) img,
+.foto .container > h3:has(img) img {
+  width: 100% !important;
+  max-width: 100%;
+  height: clamp(170px, 23vw, 280px);
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.about .container > h3:has(img) {
+  display: inline-flex;
+  vertical-align: top;
+  width: calc(25% - 18px);
+  margin: 8px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.about .container > h3:has(img) img { width: 100% !important; height: 220px; object-fit: contain; border-radius: 8px; }
+.spanduk { text-align: center; }
+.spanduk img { width: min(100%, 1050px) !important; height: auto; margin: 0 auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+/* Kontak dan Google Maps */
+.service .container > iframe, iframe { display: block; width: 100%; max-width: 100%; min-height: 320px; border: 0; border-radius: var(--radius); box-shadow: var(--shadow); }
+.service .container > h3 { margin-bottom: 25px; }
+.service .box + iframe { margin-top: 28px; }
+
+/* Tombol umum */
+button, .button, input[type="submit"] { font: inherit; cursor: pointer; }
+button { border: 0; border-radius: 10px; }
+#klikPesan, #klikSaluranwhatsap { padding: 12px 20px; margin: 6px; color: #fff; background: #16a34a; font-weight: 700; box-shadow: 0 7px 18px rgba(22,163,74,.2); }
+#klikSaluranwhatsap { background: var(--blue); box-shadow: 0 7px 18px rgba(37,99,235,.2); }
+#klikPesan:hover, #klikSaluranwhatsap:hover { transform: translateY(-2px); }
+
+/* Footer */
+footer { padding: 34px 0; color: #dbeafe; background: var(--navy); text-align: center; }
+footer .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 22px; }
+footer small { flex-basis: 100%; color: #cbd5e1; margin-bottom: 8px; }
+footer h3 { margin: 0; padding: 4px; font-size: .95rem; }
+footer h3 a, footer a { color: #e2e8f0; }
+footer a:hover { color: var(--cyan); }
+
+/* Loader */
+.bg-loader { background: #f8fafc; position: fixed; inset: 0; z-index: 9999; display: flex; justify-content: center; align-items: center; }
+.bg-loader .loader { width: 58px; height: 58px; border: 5px solid #dbeafe; border-top-color: var(--blue); border-radius: 50%; animation: puterin .8s linear infinite; }
+@keyframes puterin { to { transform: rotate(360deg); } }
+
+/* Tablet */
+@media (max-width: 980px) {
+  header .container { flex-direction: column; gap: 0; padding-bottom: 10px; }
+  header h1 { padding: 14px 0 8px; text-align: center; }
+  header ul { justify-content: center; }
+  header ul li a { padding: 10px 9px; font-size: .73rem; }
+  .dokumentasi .container > h3:has(img), .aksesoris .container > h3:has(img), .foto .container > h3:has(img) { width: calc(50% - 18px); }
+  .about .container > h3:has(img) { width: calc(33.333% - 18px); }
+}
+
+/* Handphone */
+@media (max-width: 600px) {
+  .container, .medsos .container, .medsos > div { width: 92%; }
+  .medsos { padding: 8px 0; }
+  .medsos ul, .logo ul { gap: 7px 13px; }
+  .medsos h4, .logo h3 { font-size: .78rem; }
+  header { position: sticky; top: 0; }
+  header .container { align-items: stretch; }
+  header h1 { font-size: 1.1rem; }
+  header ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 5px; }
+  header ul li a { height: 100%; min-height: 42px; display: flex; justify-content: center; align-items: center; padding: 8px 6px; font-size: .68rem; overflow-wrap: anywhere; }
+  .label { padding: 30px 0; }
+  .label h1, .label h2 { font-size: 1.35rem; }
+  section { padding: 30px 0; }
+  section h3 { font-size: 1rem; margin-bottom: 12px; }
+  .banner { min-height: 280px; padding: 28px 14px; }
+  .banner h2 { font-size: 1.55rem; }
+  .dokumentasi .container > h3:has(img), .aksesoris .container > h3:has(img), .foto .container > h3:has(img) { width: 100%; margin: 8px 0 16px; padding: 12px; }
+  .dokumentasi .container > h3:has(img) img, .aksesoris .container > h3:has(img) img, .foto .container > h3:has(img) img { height: 230px; }
+  .about .container > h3:has(img) { width: calc(50% - 18px); margin: 7px; padding: 7px; }
+  .about .container > h3:has(img) img { height: 150px; }
+  .about p { font-size: .95rem; line-height: 1.75; }
+  .box { gap: 12px; }
+  .box .col-4 { flex-basis: 100%; max-width: none; padding: 20px; }
+  iframe, .service .container > iframe { min-height: 300px; }
+  footer .container { flex-direction: column; gap: 5px; }
+  footer h3 { font-size: .9rem; }
+}
+
+@media (max-width: 360px) {
+  header ul li a { font-size: .62rem; padding: 7px 4px; }
+  .label h1, .label h2 { font-size: 1.15rem; }
+  .about .container > h3:has(img) { width: calc(50% - 14px); margin: 5px; }
+  .about .container > h3:has(img) img { height: 125px; }
+}
+
+
+.logo-tengah {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.logo-tengah img {
+    display: block;
+    width: 5%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Tampilan HP */
+@media screen and (max-width: 600px) {
+    .logo-tengah img {
+        width: 70%;
+    }
 }
