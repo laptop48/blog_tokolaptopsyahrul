@@ -1,71 +1,15 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Toko Laptop Syahrul | Penilaian</title>
+
     <link rel="icon" href="img/laptop 1.jpg" type="image/jpeg">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-</head>
-<body>
-    <!-- leader -->
-    <div class="bg-loader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- header -->
-    <div class="medsos">
-        <div class="container">
-            <ul>
-                <h4><a href="#" onclick="klikFB()"><i class="fab fa-facebook"> juallaptop5</i></a>
-                <a href="#" onclick="klikIG()"><i class="fab fa-instagram"> juallaptop5</i></a>
-                <a href="#" onclick="kliktiktok()"><i class="fab fa-tiktok">@juallaptop05112002</i></a>
-                <a href="#" onclick="klikWA()"><i class="fab fa-whatsapp"> https://wa.me/6283134702094/</i></a>
-
-    <!-- JavaScript -->
-<script>
-     function klikFB() {
-     window.open("https://web.facebook.com/juallaptop5/", "_blank");
-     }
-      function klikIG() {
-     window.open("https://www.instagram.com/juallaptop5/", "_blank");
-     }
-     function klikWA() {
-     window.open("https://wa.me/6283134702094/", "_blank");
-     }
-     function kliktiktok() {
-     window.open("https://www.tiktok.com/@juallaptop05112002", "_blank");
-     }
-    </script>
-            </ul>
-        </div>
-    </div>
-    <header>
-            <div class="container">
-                <h1><a href="index.html">TOKO LAPTOP SYAHRUL </h1>
-                    
-                <ul>
-                    <li><a href="index.html">DASHBOARD</a></li>
-                    <li ><a href="dokumentasi.html">DOKUMENTASI LAPTOP</a></li>
-                    <li><a href="service.html">TESTIMONI CUSTOMER LAPTOP</a></li>
-                    <li ><a href="penilaian.html">PENILAIAN CUSTOMER</a></li>
-                    <li><a href="foto.html">DOKUMENTASI SERVICE LAPTOP</a></li>
-                    <li><a href="aksesoris.html">PENJUALAN AKSESORIS LAPTOP</a></li>
-                    <li><a href="contact.html">CONTACT/LOKASI</a></li>
-                </ul>
-            </div>
-    </header>
-
-    <!-- label -->
-    <section class="label">
-        <div class="container">
-            <h1>PENILAIAN CUSTOMER</h1>
-        </div>
-    </section>
-
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
         .review-container {
@@ -101,6 +45,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 15px;
+            box-sizing: border-box;
         }
 
         .review-form textarea {
@@ -148,6 +93,11 @@
             background: #056334;
         }
 
+        .btn-review:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
         .review-list {
             margin-top: 35px;
         }
@@ -158,6 +108,7 @@
             margin-bottom: 15px;
             border-radius: 10px;
             background: #fafafa;
+            overflow-wrap: anywhere;
         }
 
         .review-item h4 {
@@ -181,24 +132,97 @@
             color: #888;
             padding: 20px;
         }
+
+        .review-status {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 12px;
+        }
+
+        @media(max-width:600px) {
+            .review-container {
+                margin: 20px 12px;
+                padding: 18px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- LOADER -->
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- MEDIA SOSIAL -->
+    <div class="medsos">
+        <div class="container">
+            <ul>
+                <h4>
+                    <a href="#" onclick="klikFB(); return false;">
+                        <i class="fab fa-facebook"> juallaptop5</i>
+                    </a>
+
+                    <a href="#" onclick="klikIG(); return false;">
+                        <i class="fab fa-instagram"> juallaptop5</i>
+                    </a>
+
+                    <a href="#" onclick="kliktiktok(); return false;">
+                        <i class="fab fa-tiktok"> @juallaptop05112002</i>
+                    </a>
+
+                    <a href="#" onclick="klikWA(); return false;">
+                        <i class="fab fa-whatsapp"> WhatsApp</i>
+                    </a>
+                </h4>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+
+            <h1>
+                <a href="index.html">TOKO LAPTOP SYAHRUL</a>
+            </h1>
+
+            <ul>
+                <li><a href="index.html">DASHBOARD</a></li>
+                <li><a href="dokumentasi.html">DOKUMENTASI LAPTOP</a></li>
+                <li><a href="service.html">TESTIMONI CUSTOMER LAPTOP</a></li>
+                <li><a href="penilaian.html">PENILAIAN CUSTOMER</a></li>
+                <li><a href="foto.html">DOKUMENTASI SERVICE LAPTOP</a></li>
+                <li><a href="aksesoris.html">PENJUALAN AKSESORIS LAPTOP</a></li>
+                <li><a href="contact.html">CONTACT/LOKASI</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- LABEL -->
+    <section class="label">
+        <div class="container">
+            <h1>PENILAIAN CUSTOMER</h1>
+        </div>
+    </section>
+
+    <!-- FORM PENILAIAN -->
     <main class="review-container">
 
         <h2>⭐ PENILAIAN CUSTOMER</h2>
 
         <p class="review-description">
             Bagikan pengalaman Anda setelah membeli laptop
-            di toko kami.
+            di Toko Laptop Syahrul.
         </p>
 
-        <!-- FORM PENILAIAN -->
         <form id="reviewForm" class="review-form">
 
-            <label>Nama Konsumen</label>
+            <label for="nama">Nama Konsumen</label>
+
             <input
                 type="text"
                 id="nama"
@@ -210,6 +234,7 @@
             <label>Berikan Penilaian Bintang</label>
 
             <div class="star-rating">
+
                 <input type="radio" name="rating" id="star5" value="5" required>
                 <label for="star5">★</label>
 
@@ -224,9 +249,10 @@
 
                 <input type="radio" name="rating" id="star1" value="1">
                 <label for="star1">★</label>
+
             </div>
 
-            <label>Ulasan / Komentar</label>
+            <label for="komentar">Ulasan / Komentar</label>
 
             <textarea
                 id="komentar"
@@ -235,165 +261,383 @@
                 required
             ></textarea>
 
-            <button type="submit" class="btn-review">
+            <button type="submit" class="btn-review" id="btnReview">
+                <i class="fas fa-paper-plane"></i>
                 Kirim Penilaian
             </button>
+
+            <p class="review-status" id="formStatus"></p>
 
         </form>
 
         <hr style="margin:30px 0;">
 
-        <!-- DAFTAR KOMENTAR -->
+        <!-- DAFTAR ULASAN -->
         <div class="review-list">
 
             <h3>💬 Penilaian Dari Customer Laptop</h3>
 
-            <div id="reviewList"></div>
+            <p id="jumlahReview" class="review-status">
+                Menghubungkan ke database...
+            </p>
+
+            <div id="reviewList">
+                <p class="empty-review">Memuat penilaian...</p>
+            </div>
 
         </div>
 
     </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
 
-<script>
-    const reviewForm = document.getElementById("reviewForm");
-    const reviewList = document.getElementById("reviewList");
+            <small>Copyright &copy; 2025/2026 - TokoLaptopSyahrul</small>
 
-    const STORAGE_KEY = "penilaianLaptop";
+            <h3>
+                <a href="#" onclick="klikFB(); return false;">
+                    <i class="fab fa-facebook"> juallaptop5</i>
+                </a>
+            </h3>
 
-    // Mengambil semua data penilaian
-    function getReviews() {
-        try {
-            return JSON.parse(
-                localStorage.getItem(STORAGE_KEY) || "[]"
-            );
-        } catch (error) {
-            return [];
-        }
-    }
+            <h3>
+                <a href="#" onclick="klikIG(); return false;">
+                    <i class="fab fa-instagram"> juallaptop5</i>
+                </a>
+            </h3>
 
-    // Menampilkan semua komentar customer
-    function tampilkanReview() {
-        const reviews = getReviews();
+            <h3>
+                <a href="#" onclick="klikWA(); return false;">
+                    <i class="fab fa-whatsapp"> WhatsApp</i>
+                </a>
+            </h3>
 
-        reviewList.innerHTML = "";
+            <h3>
+                <a href="#" onclick="kliktiktok(); return false;">
+                    <i class="fab fa-tiktok"> @juallaptop05112002</i>
+                </a>
+            </h3>
 
-        if (reviews.length === 0) {
-            reviewList.innerHTML = `
-                <p class="empty-review">
-                    Belum ada penilaian dari customer.
-                </p>
-            `;
-            return;
-        }
+            <a href="https://laptop48.github.io/blog_tokolaptopsyahrul/">
+                Website Toko Laptop Syahrul
+            </a>
 
-        reviews.forEach(function(review) {
-            const item = document.createElement("div");
-            item.className = "review-item";
+        </div>
+    </footer>
 
-            const nama = document.createElement("h4");
-            nama.textContent = review.nama;
-
-            const bintang = document.createElement("div");
-            bintang.className = "review-stars";
-            bintang.textContent =
-                "★".repeat(review.rating) +
-                "☆".repeat(5 - review.rating);
-
-            const komentar = document.createElement("p");
-            komentar.textContent = review.komentar;
-
-            const tanggal = document.createElement("div");
-            tanggal.className = "review-date";
-            tanggal.textContent = review.tanggal;
-
-            item.append(nama, bintang, komentar, tanggal);
-
-            reviewList.appendChild(item);
-        });
-    }
-
-    // Mengirim penilaian customer
-    reviewForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const nama = document.getElementById("nama").value.trim();
-        const komentar = document.getElementById("komentar").value.trim();
-
-        const rating = document.querySelector(
-            'input[name="rating"]:checked'
-        );
-
-        if (!nama || !komentar || !rating) {
-            alert("Silakan lengkapi semua penilaian!");
-            return;
+    <!-- MEDIA SOSIAL -->
+    <script>
+        function klikFB() {
+            window.open("https://web.facebook.com/juallaptop5/", "_blank");
         }
 
-        const reviews = getReviews();
+        function klikIG() {
+            window.open("https://www.instagram.com/juallaptop5/", "_blank");
+        }
 
-        const reviewBaru = {
-            id: Date.now(),
-            nama: nama,
-            rating: Number(rating.value),
-            komentar: komentar,
-            tanggal: new Date().toLocaleString("id-ID")
+        function klikWA() {
+            window.open("https://wa.me/6283134702094", "_blank");
+        }
+
+        function kliktiktok() {
+            window.open("https://www.tiktok.com/@juallaptop05112002", "_blank");
+        }
+    </script>
+
+    <!-- FIREBASE DATABASE -->
+    <script type="module">
+
+        // IMPORT FIREBASE
+        import { initializeApp }
+            from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            onSnapshot,
+            query,
+            orderBy,
+            serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+
+        // =====================================
+        // 1. KONFIGURASI FIREBASE
+        // =====================================
+
+        // GANTI DENGAN KONFIGURASI FIREBASE MILIK ANDA
+
+        const firebaseConfig = {
+            apiKey: "ISI_API_KEY_ANDA",
+            authDomain: "ISI_PROJECT_ID.firebaseapp.com",
+            projectId: "ISI_PROJECT_ID",
+            storageBucket: "ISI_PROJECT_ID.firebasestorage.app",
+            messagingSenderId: "ISI_MESSAGING_SENDER_ID",
+            appId: "ISI_APP_ID"
         };
 
-        // Komentar terbaru berada paling atas
-        reviews.unshift(reviewBaru);
 
-        try {
-            localStorage.setItem(
-                STORAGE_KEY,
-                JSON.stringify(reviews)
+        // =====================================
+        // 2. HUBUNGKAN DATABASE
+        // =====================================
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getFirestore(app);
+
+        const reviewsRef = collection(db, "penilaianLaptop");
+
+
+        // =====================================
+        // 3. AMBIL ELEMEN HTML
+        // =====================================
+
+        const reviewForm = document.getElementById("reviewForm");
+
+        const reviewList = document.getElementById("reviewList");
+
+        const btnReview = document.getElementById("btnReview");
+
+        const formStatus = document.getElementById("formStatus");
+
+        const jumlahReview = document.getElementById("jumlahReview");
+
+
+        // =====================================
+        // 4. FORMAT TANGGAL
+        // =====================================
+
+        function formatTanggal(timestamp) {
+
+            if (!timestamp) {
+                return "Baru saja";
+            }
+
+            return timestamp.toDate().toLocaleString("id-ID", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+        }
+
+
+        // =====================================
+        // 5. TAMPILKAN SEMUA PENILAIAN
+        // =====================================
+
+        const reviewQuery = query(
+            reviewsRef,
+            orderBy("waktu", "desc")
+        );
+
+        onSnapshot(
+            reviewQuery,
+
+            function(snapshot) {
+
+                reviewList.innerHTML = "";
+
+                jumlahReview.textContent =
+                    "Total " + snapshot.size + " penilaian customer";
+
+                if (snapshot.empty) {
+
+                    reviewList.innerHTML = `
+                        <p class="empty-review">
+                            Belum ada penilaian dari customer.
+                            Jadilah yang pertama memberikan ulasan!
+                        </p>
+                    `;
+
+                    return;
+                }
+
+                snapshot.forEach(function(docSnapshot) {
+
+                    const review = docSnapshot.data();
+
+                    const item = document.createElement("div");
+
+                    item.className = "review-item";
+
+                    const nama = document.createElement("h4");
+
+                    nama.textContent = review.nama || "Customer";
+
+                    const bintang = document.createElement("div");
+
+                    bintang.className = "review-stars";
+
+                    const nilai = Math.max(
+                        1,
+                        Math.min(5, Number(review.rating) || 1)
+                    );
+
+                    bintang.textContent =
+                        "★".repeat(nilai) +
+                        "☆".repeat(5 - nilai);
+
+                    const komentar = document.createElement("p");
+
+                    komentar.textContent = review.komentar || "";
+
+                    const tanggal = document.createElement("div");
+
+                    tanggal.className = "review-date";
+
+                    tanggal.textContent =
+                        "📅 " + formatTanggal(review.waktu);
+
+                    item.append(
+                        nama,
+                        bintang,
+                        komentar,
+                        tanggal
+                    );
+
+                    reviewList.appendChild(item);
+
+                });
+
+            },
+
+            function(error) {
+
+                console.error("Firebase error:", error);
+
+                jumlahReview.textContent = "Gagal memuat database.";
+
+                reviewList.innerHTML = `
+                    <p class="empty-review">
+                        Tidak dapat mengambil penilaian.
+                        Periksa konfigurasi Firebase dan aturan database.
+                    </p>
+                `;
+
+            }
+        );
+
+
+        // =====================================
+        // 6. SIMPAN PENILAIAN CUSTOMER
+        // =====================================
+
+        reviewForm.addEventListener("submit", async function(e) {
+
+            e.preventDefault();
+
+            const nama = document.getElementById("nama")
+                .value.trim();
+
+            const komentar = document.getElementById("komentar")
+                .value.trim();
+
+            const rating = document.querySelector(
+                'input[name="rating"]:checked'
             );
 
-            alert("Terima kasih! Penilaian berhasil dikirim.");
+            if (!nama || !komentar || !rating) {
 
-            reviewForm.reset();
+                alert("Silakan lengkapi semua penilaian!");
 
-            // Langsung tampilkan komentar terbaru
-            tampilkanReview();
+                return;
 
-        } catch (error) {
-            alert("Gagal menyimpan penilaian!");
-        }
-    });
+            }
 
-    // Memperbarui tampilan jika ada perubahan pada tab lain
-    window.addEventListener("storage", function(e) {
-        if (e.key === STORAGE_KEY) {
-            tampilkanReview();
-        }
-    });
+            if (nama.length > 60 || komentar.length > 1000) {
 
-    // Menampilkan komentar saat halaman dibuka
-    tampilkanReview();
+                alert("Nama atau komentar terlalu panjang!");
 
-</script>
+                return;
+
+            }
+
+            btnReview.disabled = true;
+
+            btnReview.textContent = "Mengirim penilaian...";
+
+            formStatus.textContent = "Sedang menyimpan ulasan...";
+
+            try {
+
+                await addDoc(reviewsRef, {
+
+                    nama: nama,
+
+                    rating: Number(rating.value),
+
+                    komentar: komentar,
+
+                    waktu: serverTimestamp()
+
+                });
+
+                alert("Terima kasih! Penilaian berhasil disimpan.");
+
+                reviewForm.reset();
+
+                formStatus.textContent =
+                    "Penilaian berhasil dikirim.";
+
+            } catch (error) {
+
+                console.error("Gagal menyimpan:", error);
+
+                alert(
+                    "Penilaian gagal disimpan. Periksa koneksi internet, konfigurasi Firebase, dan aturan database."
+                );
+
+                formStatus.textContent =
+                    "Gagal menyimpan penilaian.";
+
+            } finally {
+
+                btnReview.disabled = false;
+
+                btnReview.innerHTML =
+                    '<i class="fas fa-paper-plane"></i> Kirim Penilaian';
+
+            }
+
+        });
+
+    </script>
+
+    <!-- LOADER -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".bg-loader").hide();
+        });
+    </script>
 
 </body>
 </html>
 
 
+	<!-- footer -->
+  	<footer>
+  		<div class="container">
+  			<small>Copyright &copy; 2025/2026 - TokoLaptopSyahrul</small>
+			<h3><a href="#" onclick="klikFB()"><i class="fab fa-facebook"> juallaptop5</i></a></h3>
+  			<h3><a href="#" onclick="klikIG()"><i class="fab fa-instagram"> juallaptop5</i></a></h3>
+    			<h3><a href="#" onclick="klikWA()"><i class="fab fa-whatsapp"> https://wa.me/6283134702094/</i></a></h3>
+    			<h3><a href="#" onclick="kliktiktok()"><i class="fab fa-tiktok">@juallaptop05112002</i></a></h3>
+    			<a href="#" onclick="klik()"><i class="">https://laptop48.github.io/blog_tokolaptopsyahrul/</i></a>
+  		</div>
+  	</footer>
 
-<!-- footer -->
-    <footer>
-        <div class="container">
-            <small>Copyright &copy; 2025/2026 - TokoLaptopSyahrul</small>
-            <h3><a href="#" onclick="klikFB()"><i class="fab fa-facebook"> juallaptop5</i></a></h3>
-            <h3><a href="#" onclick="klikIG()"><i class="fab fa-instagram"> juallaptop5</i></a></h3>
-                <h3><a href="#" onclick="klikWA()"><i class="fab fa-whatsapp"> https://wa.me/6283134702094/</i></a></h3>
-                <h3><a href="#" onclick="kliktiktok()"><i class="fab fa-tiktok">@juallaptop05112002</i></a></h3>
-                <a href="#" onclick="klik()"><i class="">https://laptop48.github.io/blog_tokolaptopsyahrul/</i></a>
-        </div>
-    </footer>
 
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(".bg-loader").hide();
-        })
-    </script>
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			$(".bg-loader").hide();
+  		})
+  	</script>
 </body>
 </html>
