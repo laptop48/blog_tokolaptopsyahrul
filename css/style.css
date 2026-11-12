@@ -261,8 +261,9 @@ footer a:hover { color: var(--cyan); }
         width: 70%;
     }
 
+}
 
-   
+
 /* DAFTAR PENILAIAN CUSTOMER */
 
 .review-list {
@@ -315,6 +316,4 @@ footer a:hover { color: var(--cyan); }
     padding: 25px;
     background: #f8f8f8;
     border-radius: 10px;
-}
-
 }
