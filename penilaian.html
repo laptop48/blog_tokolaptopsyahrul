@@ -254,105 +254,123 @@
 
     </main>
 
-    <script>
-        const reviewForm = document.getElementById("reviewForm");
-        const reviewList = document.getElementById("reviewList");
 
-        // Mengambil data penilaian
-        function getReviews() {
+<script>
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewList = document.getElementById("reviewList");
+
+    const STORAGE_KEY = "penilaianLaptop";
+
+    // Mengambil semua data penilaian
+    function getReviews() {
+        try {
             return JSON.parse(
-                localStorage.getItem("penilaianLaptop") || "[]"
+                localStorage.getItem(STORAGE_KEY) || "[]"
             );
+        } catch (error) {
+            return [];
+        }
+    }
+
+    // Menampilkan semua komentar customer
+    function tampilkanReview() {
+        const reviews = getReviews();
+
+        reviewList.innerHTML = "";
+
+        if (reviews.length === 0) {
+            reviewList.innerHTML = `
+                <p class="empty-review">
+                    Belum ada penilaian dari customer.
+                </p>
+            `;
+            return;
         }
 
-        // Menampilkan penilaian
-        function tampilkanReview() {
+        reviews.forEach(function(review) {
+            const item = document.createElement("div");
+            item.className = "review-item";
 
-            const reviews = getReviews();
+            const nama = document.createElement("h4");
+            nama.textContent = review.nama;
 
-            reviewList.innerHTML = "";
+            const bintang = document.createElement("div");
+            bintang.className = "review-stars";
+            bintang.textContent =
+                "★".repeat(review.rating) +
+                "☆".repeat(5 - review.rating);
 
-            if (reviews.length === 0) {
-                reviewList.innerHTML = `
-                    <p class="empty-review">
-                        Belum ada penilaian dari konsumen.
-                    </p>
-                `;
-                return;
-            }
+            const komentar = document.createElement("p");
+            komentar.textContent = review.komentar;
 
-            reviews.forEach(review => {
+            const tanggal = document.createElement("div");
+            tanggal.className = "review-date";
+            tanggal.textContent = review.tanggal;
 
-                const item = document.createElement("div");
-                item.className = "review-item";
+            item.append(nama, bintang, komentar, tanggal);
 
-                const nama = document.createElement("h4");
-                nama.textContent = review.nama;
+            reviewList.appendChild(item);
+        });
+    }
 
-                const bintang = document.createElement("div");
-                bintang.className = "review-stars";
-                bintang.textContent =
-                    "★".repeat(review.rating) +
-                    "☆".repeat(5 - review.rating);
+    // Mengirim penilaian customer
+    reviewForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-                const komentar = document.createElement("p");
-                komentar.textContent = review.komentar;
+        const nama = document.getElementById("nama").value.trim();
+        const komentar = document.getElementById("komentar").value.trim();
 
-                const tanggal = document.createElement("div");
-                tanggal.className = "review-date";
-                tanggal.textContent = review.tanggal;
+        const rating = document.querySelector(
+            'input[name="rating"]:checked'
+        );
 
-                item.append(nama, bintang, komentar, tanggal);
-
-                reviewList.appendChild(item);
-            });
+        if (!nama || !komentar || !rating) {
+            alert("Silakan lengkapi semua penilaian!");
+            return;
         }
 
-        // Menyimpan penilaian baru
-        reviewForm.addEventListener("submit", function(e) {
+        const reviews = getReviews();
 
-            e.preventDefault();
+        const reviewBaru = {
+            id: Date.now(),
+            nama: nama,
+            rating: Number(rating.value),
+            komentar: komentar,
+            tanggal: new Date().toLocaleString("id-ID")
+        };
 
-            const nama = document.getElementById("nama").value.trim();
-            const komentar = document.getElementById("komentar").value.trim();
+        // Komentar terbaru berada paling atas
+        reviews.unshift(reviewBaru);
 
-            const rating = document.querySelector(
-                'input[name="rating"]:checked'
-            );
-
-            if (!nama || !komentar || !rating) {
-                alert("Silakan lengkapi semua penilaian!");
-                return;
-            }
-
-            const reviews = getReviews();
-
-            const reviewBaru = {
-                nama: nama,
-                rating: Number(rating.value),
-                komentar: komentar,
-                tanggal: new Date().toLocaleString("id-ID")
-            };
-
-            reviews.unshift(reviewBaru);
-
+        try {
             localStorage.setItem(
-                "penilaianLaptop",
+                STORAGE_KEY,
                 JSON.stringify(reviews)
             );
 
-            alert("Terima kasih! Penilaian berhasil disimpan.");
+            alert("Terima kasih! Penilaian berhasil dikirim.");
 
             reviewForm.reset();
 
+            // Langsung tampilkan komentar terbaru
             tampilkanReview();
 
-        });
+        } catch (error) {
+            alert("Gagal menyimpan penilaian!");
+        }
+    });
 
-        // Tampilkan data ketika halaman dibuka
-        tampilkanReview();
+    // Memperbarui tampilan jika ada perubahan pada tab lain
+    window.addEventListener("storage", function(e) {
+        if (e.key === STORAGE_KEY) {
+            tampilkanReview();
+        }
+    });
 
-    </script>
+    // Menampilkan komentar saat halaman dibuka
+    tampilkanReview();
+
+</script>
 
 </body>
 </html>
