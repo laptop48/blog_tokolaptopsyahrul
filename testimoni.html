@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Toko Laptop Syahrul | Testimoni</title>
+	<link rel="icon" href="img/laptop 1.jpg" type="image/jpeg">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- leader -->
+	<div class="bg-loader">
+		<div class="loader"></div>
+	</div>
+
+    <!-- header -->
+    <div class="medsos">
+    	<div class="container">
+    		<ul>
+    			<h4><a href="#" onclick="klikFB()"><i class="fab fa-facebook"> juallaptop5</i></a>
+    			<a href="#" onclick="klikIG()"><i class="fab fa-instagram"> juallaptop5</i></a>
+    			<a href="#" onclick="kliktiktok()"><i class="fab fa-tiktok">@juallaptop05112002</i></a>
+    			<a href="#" onclick="klikWA()"><i class="fab fa-whatsapp"> https://wa.me/6283134702094/</i></a>
+
+    <!-- JavaScript -->
+<script>
+ 	 function klikFB() {
+   	 window.open("https://web.facebook.com/juallaptop5/", "_blank");
+ 	 }
+ 	  function klikIG() {
+   	 window.open("https://www.instagram.com/juallaptop5/", "_blank");
+ 	 }
+ 	 function klikWA() {
+   	 window.open("https://wa.me/6283134702094/", "_blank");
+ 	 }
+ 	 function kliktiktok() {
+   	 window.open("https://www.tiktok.com/@juallaptop05112002", "_blank");
+ 	 }
+	</script>
+    		</ul>
+    	</div>
+    </div>
+    <header>
+    		<div class="container">
+    	    	<h1><a href="index.html">TOKO LAPTOP SYAHRUL </h1>
+    	    	<ul>
+    		     	<li><a href="index.html">DASHBOARD</a></li>
+    		     	<li><a href="dokumentasi.html">DOKUMENTASI LAPTOP</a></li>
+    		     	<li ><a href="testimoni.html">TESTIMONI CUSTOMER LAPTOP</a></li>
+    		     	<li ><a href="penilaian.html">PENILAIAN CUSTOMER</a></li>
+					<li><a href="service.html">DOKUMENTASI SERVICE LAPTOP</a></li>
+					<li><a href="aksesoris.html">PENJUALAN AKSESORIS LAPTOP</a></li>
+    		     	<li><a href="contact.html">CONTACT/LOKASI</a></li>
+    	    	</ul>
+        	</div>
+    </header>
+
+<!-- about -->
+  	<section class="about">
+  		<div class="container">
+		<h3 style="margin-bottom: 0;"> </h3>
+  		<p style="margin-top: 5px;"> </p>
+
+			
+  		<h3>PENJELASAN TESTIMONI</h3>
+  		<p style="margin-top: 5px;"> Testimoni Konsumen Dibawah Ini Real dari pembeli langsung, Jadi siapa cepat dia dapat harga murah,
+		mulai dari 2-3jtan sesuai dengan spesifikasi dan merk, Pokonya direkomendasikan sesuai kebutuhan kerjan dll.☺️🙏🏻</p>
+</div>
+  	</section>
+
+	
+   <!-- label -->
+    <section class="label">
+    	<div class="container">
+    		<h1>TESTIMONI CUSTOMER TOKO LAPTOP SYAHRUL</h1>
+    	</div>
+    </section>
+	
+  	<!-- about -->
+  	<section class="about">
+  		<div class="container">
+
+<!-- FITUR UPLOAD DAN HAPUS FOTO -->
+<section class="services-upload">
+    <div class="container">
+
+        
+        </p>
+
+        <div class="upload-box">
+           <label for="photoInput" class="upload-button">
+                <i class=""></i>
+               
+            </label>
+
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+            >
+        </div>
+
+        <div id="uploadStatus" class="upload-status"></div>
+        <div id="uploadedGallery" class="upload-gallery"></div>
+
+    </div>
+</section>
+<!-- AKHIR FITUR UPLOAD DAN HAPUS FOTO -->
+  			
+  		
+  		</div>
+  	</section>
+
+
+  	
+  	<!-- footer -->
+  	<footer>
+  		<div class="container">
+  			<small>Copyright &copy; 2025/2026 - TokoLaptopSyahrul</small>
+			<h3><a href="#" onclick="klikFB()"><i class="fab fa-facebook"> juallaptop5</i></a></h3>
+  			<h3><a href="#" onclick="klikIG()"><i class="fab fa-instagram"> juallaptop5</i></a></h3>
+    			<h3><a href="#" onclick="klikWA()"><i class="fab fa-whatsapp"> https://wa.me/6283134702094/</i></a></h3>
+    			<h3><a href="#" onclick="kliktiktok()"><i class="fab fa-tiktok">@juallaptop05112002</i></a></h3>
+    			<a href="#" onclick="klik()"><i class="">https://laptop48.github.io/blog_tokolaptopsyahrul/</i></a>
+  		</div>
+  	</footer>
+
+
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			$(".bg-loader").hide();
+  		})
+
+
+// ======================================
+// SISTEM UPLOAD DAN HAPUS FOTO
+// PENYIMPANAN MENGGUNAKAN INDEXEDDB
+// ======================================
+
+const DB_NAME = "TokoLaptopSyahrulDB";
+const STORE_NAME = "foto";
+
+let db;
+
+// Membuka database
+function bukaDatabase() {
+    return new Promise((resolve, reject) => {
+
+        const request = indexedDB.open(DB_NAME, 1);
+
+        request.onupgradeneeded = function(event) {
+            const database = event.target.result;
+
+            if (!database.objectStoreNames.contains(STORE_NAME)) {
+                database.createObjectStore(STORE_NAME, {
+                    keyPath: "id",
+                    autoIncrement: true
+                });
+            }
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            resolve(db);
+        };
+
+        request.onerror = function() {
+            reject("Database gagal dibuka");
+        };
+    });
+}
+
+// Menampilkan status
+function statusUpload(pesan) {
+    document.getElementById("uploadStatus").textContent = pesan;
+}
+
+// Upload foto
+document.getElementById("photoInput")
+.addEventListener("change", async function(event) {
+
+    const files = Array.from(event.target.files);
+
+    if (files.length === 0) return;
+
+    try {
+        for (const file of files) {
+
+            if (!file.type.startsWith("image/")) {
+                continue;
+            }
+
+            const foto = {
+                nama: file.name,
+                tipe: file.type,
+                tanggal: new Date().toLocaleString(),
+                gambar: file
+            };
+
+            await new Promise((resolve, reject) => {
+
+                const transaction = db.transaction(
+                    STORE_NAME,
+                    "readwrite"
+                );
+
+                transaction.objectStore(STORE_NAME).add(foto);
+
+                transaction.oncomplete = resolve;
+                transaction.onerror = reject;
+
+            });
+        }
+
+        statusUpload("");
+
+        await tampilkanFoto();
+
+    } catch (error) {
+        statusUpload("Gagal menyimpan foto. Periksa kapasitas penyimpanan.");
+        console.error(error);
+    }
+
+    event.target.value = "";
+});
+
+// Mengambil dan menampilkan foto
+async function tampilkanFoto() {
+
+    const gallery = document.getElementById("uploadedGallery");
+
+    gallery.innerHTML = "";
+
+    const fotoList = await new Promise((resolve, reject) => {
+
+        const transaction = db.transaction(
+            STORE_NAME,
+            "readonly"
+        );
+
+        const request = transaction
+            .objectStore(STORE_NAME)
+            .getAll();
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = reject;
+
+    });
+
+    if (fotoList.length === 0) {
+        gallery.innerHTML =
+            "<p></p>";
+        return;
+    }
+
+    fotoList.forEach(foto => {
+
+        const url = URL.createObjectURL(foto.gambar);
+
+        const card = document.createElement("div");
+        card.className = "upload-card";
+
+        const img = document.createElement("img");
+        img.src = url;
+        img.alt = foto.nama;
+
+        const info = document.createElement("div");
+        info.className = "photo-info";
+
+        const nama = document.createElement("p");
+        nama.textContent = foto.nama;
+
+        const tanggal = document.createElement("small");
+        tanggal.textContent = foto.tanggal;
+
+        const tombol = document.createElement("button");
+        tombol.className = "delete-photo";
+        tombol.innerHTML =
+            '<i class=""></i> ';
+
+        tombol.addEventListener("click", function() {
+            hapusFoto(foto.id);
+        });
+
+        info.appendChild(nama);
+        info.appendChild(tanggal);
+        info.appendChild(document.createElement("br"));
+        info.appendChild(document.createElement("br"));
+        info.appendChild(tombol);
+
+        card.appendChild(img);
+        card.appendChild(info);
+
+        gallery.appendChild(card);
+
+    });
+}
+
+// Menghapus foto
+	async function hapusFoto(id) {
+
+    const yakin = confirm(
+        "Apakah Anda yakin ingin menghapus foto ini?"
+    );
+    if (!yakin) return;
+    try {
+
+    	await new Promise((resolve, reject) => {
+            const transaction = db.transaction(
+                STORE_NAME,
+                "readwrite"
+        );
+
+            transaction.objectStore(STORE_NAME).delete(id);
+
+            transaction.oncomplete = resolve;
+            transaction.onerror = reject;
+
+        });
+        statusUpload("");
+        await tampilkanFoto();
+
+    } catch (error) {
+        statusUpload("Foto gagal dihapus.");
+        console.error(error);
+    }
+}
+
+// Menjalankan database
+bukaDatabase()
+.then(() => {
+    tampilkanFoto();
+})
+.catch(error => {
+    statusUpload("Database tidak dapat dibuka.");
+    console.error(error);
+});
+
+  	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
