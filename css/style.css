@@ -385,7 +385,66 @@ footer a:hover { color: var(--cyan); }
     color: #00d4ff;
 }
 
+
+
+/* FOOTER */
+footer {
+    background-color: #101b35;
+    color: white;
+    padding: 25px 10px 40px;
+    text-align: center;
 }
+
+/* CONTAINER */
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* COPYRIGHT DI BARIS PERTAMA */
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+footer .copyright small {
+    color: white;
+    font-size: 13px;
+}
+
+/* SOSIAL MEDIA DAN WEBSITE BARIS KEDUA */
+footer .footer-sosmed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+footer .footer-sosmed h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+footer .footer-sosmed a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-sosmed a:hover {
+    color: #00bfff;
+}
+
+/* TAMPILAN HP */
+@media screen and (max-width: 768px) {
+    footer .footer-sosmed {
+        gap: 15px;
+    }
+}
+
 }
 
 
